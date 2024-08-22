@@ -1,4 +1,4 @@
-![Telemedicine](https://github.com/user-attachments/assets/d3cf8baa-8fd6-4ae9-ae13-cc817dd0ec03)
+![Telemedicine photo](https://github.com/user-attachments/assets/30ea95b8-cfdb-4d96-a9cf-7c08d3159164)
 # Telemedicine ⚕️ 
 
 
