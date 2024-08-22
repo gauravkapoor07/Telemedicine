@@ -1,0 +1,1268 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   text-align: center;
+   background-image: url(hero-bg.png);
+}
+
+
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.animated {
+    opacity: 1;
+    transform: translateY(0);
+}
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes moveText {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(20px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.specialty {
+ 
+    opacity: 0; /* Start hidden */
+    transform: translateY(20px); /* Start position */
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.specialty.animated {
+    opacity: 1; /* End visible */
+    transform: translateY(0); /* End position */
+}
+
+.text-animate {
+    animation: moveText 1s ease-in-out infinite;
+}
+.test-animation {
+    animation: testKeyframes 2s infinite;
+}
+
+@keyframes testKeyframes {
+    from {
+        background: red;
+    }
+    to {
+        background: blue;
+    }
+}
+
+
+/* Body and Main Layout */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+/* Header Styles */
+header {
+    background: rgba(51, 51, 51, 0.8);
+    color: #fff;
+    padding: 1em 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transition: background 0.4s ease, box-shadow 0.4s ease;
+}
+
+header.scrolled {
+    background: #007BFF;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1em;
+}
+
+.logo h1 {
+    font-size: 2.2em;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    /* gap: 0; */
+    margin: 0;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.7em 1.2em;
+    display: block;
+    font-weight: bold;
+    transition: background 0.3s ease, color 0.3s ease;
+    border-radius: 5px;
+}
+
+nav ul li a:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+
+nav ul li a:hover,
+nav ul li a.active {
+    background: #0056b3;
+    color: #fff;
+}
+
+.user-menu {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.user-menu a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.6em 1em;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.user-menu .notifications {
+    position: relative;
+}
+
+.user-menu .notifications .fas.fa-bell {
+    font-size: 1em; /* Maintain the size similar to other icons/text */
+    color: lightgray;
+    transition: color 0.3s ease;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-2px); }
+    75% { transform: translateX(2px); }
+}
+
+.user-menu .notifications:hover .fas.fa-bell {
+    color: #0056b3;
+    animation: shake 0.5s;
+}
+
+.user-menu .login:hover,
+.user-menu .signup:hover {
+    background: #fff;
+    color: #007BFF;
+    border-color: #007BFF;
+}
+
+.user-dropdown {
+    position: relative;
+}
+
+.user-dropdown .dropbtn {
+    background: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 0.6em 1em;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.user-dropdown .dropbtn:hover {
+    background: #0056b3;
+}
+
+.user-dropdown .dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background: #fff;
+    color: #333;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    margin-top: 0.5em;
+    min-width: 150px;
+}
+
+.user-dropdown .dropdown-content a {
+    color: #333;
+    padding: 0.6em 1em;
+    text-decoration: none;
+    display: block;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.user-dropdown .dropdown-content a:hover {
+    background: #007BFF;
+    color: #fff;
+}
+
+.user-dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+/* Specialties Section */
+#specialties {
+    background: #f4f4f4;
+    padding: 2em;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    margin: 5em 0;
+    overflow: hidden;
+    position: relative;
+    
+}
+
+/* Container for Flex Layout */
+.specialties-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+    margin: 3em;
+}
+
+/* Individual Specialty Item */
+.specialty {
+    flex: 1 1 200px;
+    background: #f9f9f9;
+    padding: 1.5em;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, color 0.3s ease, border 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid transparent;
+    cursor: pointer;
+}
+
+/* Header Styling */
+.specialty h4 {
+    margin: 0.5em 0;
+    font-size: 1.2em;
+    color: #333;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+    position: relative;
+}
+
+/* Arrow Styling */
+.specialty h4::after {
+    content: '';
+    display: block;
+    width: 0; 
+    height: 0; 
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #333;
+    margin: 0.5em auto 0;
+    transition: border-top-color 0.3s ease;
+}
+
+/* Description Styling */
+.specialty p {
+    margin: 0.5em 0;
+    color: #666;
+    line-height: 1.4;
+}
+
+/* Icon Styling */
+.specialty i {
+    font-size: 2.8em;
+    color: #007BFF;
+    margin-top: 0.5em;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover Effects */
+.specialty:hover {
+    transform: scale(1.05) rotate(2deg);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    background: #007BFF;
+    color: #fff;
+    border: 2px solid #0056b3;
+}
+
+.specialty:hover h4 {
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.specialty:hover h4::after {
+    border-top-color: #fff;
+}
+
+.specialty:hover p {
+    color: #fff;
+}
+
+.specialty:hover i {
+    color: #fff;
+    transform: scale(1.2) rotate(10deg);
+}
+
+/* Border Highlight Effect */
+.specialty::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0%;
+    height: 0%;
+    border: 2px solid #007BFF;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s ease, height 0.3s ease;
+    z-index: 0;
+}
+
+.specialty:hover::before {
+    width: 150%;
+    height: 150%;
+}
+
+/* Background Animation */
+.specialty::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 123, 255, 0.1);
+    transition: opacity 0.3s ease;
+    z-index: -1;
+    opacity: 0;
+}
+
+.specialty:hover::after {
+    opacity: 1;
+}
+
+/* Tooltip */
+.specialty:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #333;
+    color: #fff;
+    padding: 0.5em;
+    border-radius: 4px;
+    white-space: nowrap;
+    opacity: 1;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .specialty {
+        flex: 1 1 100%;
+    }
+}
+
+/* Doctors Listing */
+#doctors {
+    background: #f4f4f4;
+    padding: 2em;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+
+}
+
+.doctors-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5em;
+    margin: 3em;
+}
+
+.doctor-item {
+    flex: 1 1 150px;
+    background: #f9f9f9;
+    padding: 1.5em;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, color 0.3s ease;
+}
+
+.doctor-item img {
+    max-width: 60px;
+    margin-bottom: 0.5em;
+    transition: transform 0.3s ease;
+}
+
+.doctor-item:hover img {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+.doctor-item h5 {
+    margin: 0.5em 0;
+    font-size: 1.1em;
+    color: #007BFF;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.doctor-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2); /* Enhanced shadow */
+    background: #007BFF;
+    color: #fff;
+}
+
+.doctor-item:hover img {
+    filter: brightness(0) invert(1);
+}
+
+.doctor-item:hover h5 {
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+/* About Us Section */
+#about {
+    background: url('hero-bg.png') no-repeat center center fixed;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 2em 0;
+    overflow: hidden;
+    position: relative;
+    animation: parallax 30s linear infinite;
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    gap: 1.5em;
+    margin: 40px;
+}
+
+.about-item {
+    flex: 1 1 300px;
+    background: #fff;
+    padding: 2em;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+    margin: 0 1em; /* Space between items */
+    position: relative;
+    overflow: hidden;
+    filter: grayscale(20%);
+}
+
+/* Hover Effects */
+.about-item h3 {
+    margin-bottom: 0.5em;
+    color: #007BFF;
+    font-size: 1.5em;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.2); /* Add shadow for better readability */
+}
+
+.about-item p {
+    color: #333;
+    font-size: 1.1em;
+}
+
+.about-item:hover {
+    transform: scale(1.05) rotate(2deg);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    filter: grayscale(0%);
+    border: 2px solid #007BFF; /* Border effect on hover */
+}
+
+.about-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.1); /* Overlay color */
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease, background 0.3s ease;
+    z-index: 0;
+}
+
+.about-item:hover::before {
+    transform: scaleX(1);
+    background: rgba(0, 0, 0, 0.2); /* Darker on hover */
+}
+
+.about-item h4, .about-item p {
+    position: relative;
+    z-index: 1;
+}
+
+/* Fade-in Effect */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.about-item {
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Continuous Scrolling Animation */
+@keyframes parallax {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 100% 0;
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .about-item {
+        flex: 1 1 200px;
+        margin: 0.5em;
+    }
+}
+
+/* Button for Pausing Scrolling */
+#pauseScroll {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 0.5em 1em;
+    border-radius: 4px;
+    cursor: pointer;
+    z-index: 1;
+    transition: background 0.3s ease, transform 0.2s ease;
+    animation: pulse 1.5s infinite; /* Pulse animation */
+}
+
+#pauseScroll:hover {
+    background: #0056b3;
+}
+
+#pauseScroll:active {
+    transform: scale(0.98);
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Video Consultation Section */
+#consultation {
+    background: #fff;
+    padding: 2em;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin: 2em 0;
+}
+
+#videoContainer {
+    display: flex;
+    gap: 1em;
+    border: 2px solid #ddd; /* Add border to container */
+    border-radius: 8px;
+    transition: border-color 0.3s ease;
+}
+
+#videoContainer:hover {
+    border-color: #007BFF; /* Change border color on hover */
+}
+
+video {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 8px;
+    border: 2px solid #ddd;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+video:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    transform: scale(1.03); /* Slight zoom effect on hover */
+}
+
+button {
+    padding: 0.75em 1.5em;
+    border: none;
+    border-radius: 4px;
+    background: #007BFF;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease; /* Added transform */
+}
+
+button:hover {
+    background: #0056b3;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transform: scale(1.02); /* Slight scale effect on hover */
+    border: 2px solid #0056b3; /* Border effect on hover */
+}
+
+/* General Enhancements */
+html {
+    scroll-behavior: smooth; /* Smooth scroll effect */
+}
+
+body {
+    font-family: 'Arial', sans-serif; /* Use a web-friendly font */
+    line-height: 1.6; /* Improve readability */
+}
+
+/* News & Articles Section */
+
+#news {
+    background: #f0f4f8;
+    padding: 2em;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 86, 179, 0.1); /* Light primary color shadow */
+    margin: 2em 0;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.news-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+    justify-content: space-between;
+    margin: 3em;
+    cursor: pointer;
+}
+
+.news-item {
+    background: #ffffff;
+    border: none;
+    border-radius: 15px;
+    padding: 3em;
+    box-shadow: 0 4px 12px rgba(0, 86, 179, 0.2); /* Light primary color shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    position: relative;
+    color: #333; /* Darker text color for contrast */
+    overflow: hidden;
+    flex: 1 1 calc(33.333% - 1.5em); /* Adjusts to 1/3 width minus the gap */
+    box-sizing: border-box; /* Ensures padding and border are included in the width */
+    animation: slideUp 0.5s ease-out; /* Initial animation from bottom to top */
+}
+
+.news-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 86, 179, 0.2); /* Light primary color overlay */
+    transition: opacity 0.3s ease;
+    opacity: 0;
+    z-index: 1;
+}
+
+.news-item:hover::before {
+    opacity: 1;
+}
+
+.news-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 86, 179, 0.3); /* Enhanced shadow effect on hover */
+    background: linear-gradient(135deg, #0056b3 0%, #004494 100%); /* Darker blue on hover */
+}
+
+.news-item h3 {
+    margin-top: 0;
+    font-size: 1.8em;
+    transition: color 0.3s ease;
+    z-index: 2;
+    position: relative;
+}
+
+.news-item:hover h3 {
+    color: #ffffff; /* White text for better contrast on hover */
+}
+
+.news-item .meta {
+    font-size: 0.9em;
+    color: #666; /* Slightly darker text for readability */
+    margin-bottom: 1em;
+    z-index: 2;
+    position: relative;
+}
+
+.news-item p {
+    font-size: 1em;
+    color: #333; /* Darker text color for contrast */
+    line-height: 1.6;
+    z-index: 2;
+    position: relative;
+}
+
+.read-more {
+    display: inline-block;
+    margin-top: 1em;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    position: relative;
+    z-index: 2;
+}
+
+.read-more::after {
+    content: '→';
+    position: absolute;
+    right: -1.5em;
+    opacity: 0;
+    transition: right 0.3s ease, opacity 0.3s ease;
+}
+
+.read-more:hover {
+    color: #ffffff;
+}
+
+.read-more:hover::after {
+    right: -0.5em;
+    opacity: 1;
+}
+
+/* Keyframe Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Slide-up Animation for .news-item */
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .news-item {
+        flex: 1 1 calc(50% - 1.5em); /* Two items per row on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .news-item {
+        flex: 1 1 100%; /* One item per row on very small screens */
+    }
+}
+
+/* Footer Styles */
+
+footer {
+    background: #222;
+    color: #fff;
+    padding: 3em 1em;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    height: 350px;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em; /* Adjusted gap for better spacing */
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section {
+    flex: 1 1 220px; /* Adjusted flex basis for better alignment */
+    padding: 0 1em;
+    min-width: 200px; /* Ensuring minimum width for sections */
+}
+
+.footer-section h3 {
+    margin-top: 0;
+    color: #007BFF;
+    font-size: 1.2em;
+}
+
+.footer-section p, .footer-section ul {
+    margin: 0.5em 0;
+    color: #bbb;
+}
+
+.footer-section ul {
+    padding: 0;
+    list-style: none;
+}
+
+.footer-section a {
+    color: #bbb;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+    color: #007BFF;
+}
+
+.footer-section form {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-section input[type="email"] {
+    padding: 0.7em;
+    border: 1px solid #555;
+    border-radius: 4px;
+    margin-bottom: 0.5em;
+    background: #333;
+    color: #fff;
+}
+
+.footer-section button {
+    padding: 0.7em;
+    border: none;
+    border-radius: 4px;
+    background-color: #007BFF;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.footer-section button:hover {
+    background-color: #0056b3;
+}
+
+/* Additional styling for bottom text */
+.footer-bottom {
+    text-align: center;
+    margin-top: 2em;
+    font-size: 0.9em;
+    color: #bbb;
+    border-top: 1px solid #444;
+    padding-top: 1em;
+    font-weight: bold;
+}
+
+/* Animation for Smooth Scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Header Color Change on Scroll */
+@keyframes headerColorChange {
+    from {
+        background: rgba(51, 51, 51, 0.8);
+    }
+    to {
+        background: #007BFF;
+    }
+}
+
+/* Header Color Change on Scroll */
+header.scrolled {
+    animation: headerColorChange 0.4s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 0.5em;
+        display: none;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+        font-size: 1.5em;
+        cursor: pointer;
+    }
+
+    .user-menu {
+        display: none;
+    }
+}
+
+
+
+
+
+/* Welcome Section Styles */
+
+#welcome {
+    background: url('hero.jpg') no-repeat center center; /* Add the background image */
+    background-size: cover; /* Ensure the image covers the entire area */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Full viewport height */
+    color: white; /* Text color for better readability */
+    position: relative; /* Ensure the overlay stays on top */
+    width: 100%;
+    margin: 0;
+    padding: 0px;
+    top: 82px;
+
+}
+
+.welcome-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+
+#welcome::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay for better text visibility */
+    z-index: 0;
+}
+
+/* Bright colors for the text */
+.text h1 {
+    font-size: 2.5em;
+    color: #ffffff; /* Bright Gold */
+    margin-bottom: 0.5em;
+}
+
+.text p {
+    font-size: 1.2em;
+    color: #ffffff; /* Tomato */
+}
+
+/* Specific color for the word "telemedicine" */
+.text h1 span {
+    color: #ffffff; /* Dark Turquoise */
+    font-weight: bold;
+}
+
+.text p span {
+    color: #fefffe; /* Lime Green */
+    font-weight: bold;
+}
+
+/* Keyframes for the animation */
+@keyframes moveText {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(20px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* Applying the animation to the span */
+.text h1 span {
+    color: #00CED1; /* Dark Turquoise */
+    font-weight: bold;
+    display: inline-block; /* Ensure the span respects transform */
+    animation: moveText 2s infinite; /* Adjust duration and repetition */
+    font-size: 55px; /* Slightly larger text for effect */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Adding a shadow for emphasis */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+a:focus, button:focus {
+    outline: 3px solid #007BFF; /* or a color of your choice */
+    outline-offset: 2px;
+}
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .menu-toggle {
+        display: block;
+    }
+}
+a:hover, a:focus {
+    color: #0056b3;
+    text-decoration: underline;
+}
+.fade-in {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+.fade-in.visible {
+    opacity: 1;
+}
+#welcome {
+    background-position: center;
+    transition: background-position 0.5s ease;
+}
+input, textarea {
+    border: 1px solid #ddd;
+    padding: 0.5em;
+    border-radius: 4px;
+    transition: border-color 0.3s ease;
+}
+input:focus, textarea:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+
+
+
+
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin-top: 10px;
+}
+
+form input, form textarea, form button {
+    margin-top: 5px;
+}
+
+.logo-text {
+    font-size: 1.5em;
+    font-weight: bolder;
+    color: #ffffff; ; /* Change this value to your preferred color */
+    margin: 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    max-height: 50px;
+    width: auto;
+    margin-right: 10px;
+}
+
+
+
+
+
+/* Services Section */
+#services {
+    padding: 40px 20px;
+    background-color: #f9f9f900;
+    margin-top: 165px;
+}
+
+.services-grid {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+.service-item {
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    width: 200px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.service-item img {
+    max-width: 100px;
+    margin-bottom: 15px;
+}
+
+.service-item p {
+    margin: 0;
+    font-size: 1.1em;
+    color: #555;
+}
+
+.service-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* How It Works Section */
+#how-it-works {
+    padding: 40px 20px;
+    background-color: #e9ecef;
+}
+
+.steps {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 35px;
+}
+
+.step {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 50px;
+    text-align: center;
+    width: 235px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.step img {
+    max-width: 100px;
+    margin-bottom: 15px;
+}
+
+.step p {
+    margin: 0;
+    font-size: 1.1em;
+    color: #555;
+}
+
+.step:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Media Queries */
+@media (max-width: 600px) {
+    .services-grid, .steps {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+

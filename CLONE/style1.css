@@ -1,0 +1,970 @@
+/* General Reset */
+body, h1, h2, h3, p, ul, li, header, footer {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+ul {
+    list-style-type: none;
+}
+
+/* Header Styling */
+header {
+    background-color: #0056b3;
+    color: white;
+    padding: 10px 20px;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-container .logo h1 {
+    margin: 0;
+}
+
+.header-container nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.header-container nav ul li {
+    margin: 0 10px;
+}
+
+.header-container nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.header-container nav ul li a:hover {
+    background-color: #009688; /* Teal background on hover */
+    color: #ffffff; /* White text color on hover */
+}
+
+/* Hover effect */
+ul li a:hover {
+    color: #fff; /* Text color on hover */
+    background-color: #007bff; /* Background color on hover */
+    border-radius: 5px; /* Rounded corners for hover background */
+}
+/* Header Styles */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #4a90e2;
+}
+
+.header-container .logo h1 {
+    color: #fff;
+    font-size: 24px;
+}
+
+.header-container nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.header-container nav ul li {
+    position: relative;
+}
+
+.header-container nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.referral-icon {
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    animation: bounce 2s infinite;
+}
+
+/* Referral Pop-Up Animation */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Referral Pop-Up Styles */
+.referral-popup {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    width: 300px;
+    background-color: #e0ffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.referral-popup h2 {
+    color: #4a90e2;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.referral-popup .referral-content {
+    text-align: center;
+}
+
+.referral-popup #referralLink {
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.referral-popup #copyReferralLink {
+    background-color: #4a90e2;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+.referral-popup #copyReferralLink:hover {
+    background-color: #357ABD;
+}
+
+.referral-popup .social-share {
+    margin-top: 10px;
+}
+
+.referral-popup .social-share a {
+    margin: 5px;
+    display: inline-block;
+    color: #fff;
+    background-color: #4a90e2;
+    padding: 8px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.referral-popup .social-share a i {
+    margin-right: 5px;
+}
+
+.referral-popup .social-share a:hover {
+    background-color: #357ABD;
+}
+
+
+/* Main Content */
+main {
+    padding: 20px;
+    background-color: lightcyan;
+}
+
+.welcome-content {
+    text-align: center;
+    /* animation: moveText 5s linear infinite; */
+}
+
+.welcome-content .text {
+    margin-bottom: 20px;
+    animation: moveText 5s linear infinite;
+}
+
+.welcome-content h1 span {
+    color: #004d40; /* Dark teal */
+   
+}
+
+
+.disease-container,
+.disease-container1,
+.disease-container2,
+.disease-container3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 9px;
+}
+
+.disease-container img,
+.disease-container1 img,
+.disease-container2 img,
+.disease-container3 img {
+    width: 200px;
+    height: auto;
+    margin: 0 100px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.disease-container img:hover,
+.disease-container1 img:hover,
+.disease-container2 img:hover,
+.disease-container3 img:hover {
+    transform: scale(1.1); /* Enlarge the image slightly */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+}
+
+
+.disease-name {
+    font-size: 1.2em;
+    color: #00796b; /* Darker teal */
+}
+
+/* Appointments Section */
+/* Appointments Section */
+/* Appointments Section */
+#appointments {
+    margin: 40px 0; /* Adds vertical space (top and bottom) around the section */
+    padding: 20px; /* Adds space inside the section */
+    background-color: lightcyan; /* Optional: to add a background color */
+    border-radius: 50px; /* Optional: to round the corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: to add a subtle shadow */
+    text-align: center; /* Center-aligns text and inline elements */
+}
+
+.appointment-button {
+    background-color: #00796b; /* Darker teal */
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 10px; /* Adds space below the button */
+    display: inline-block; /* Allows text-align to work */
+    font-size: 1.3em;
+}
+
+
+.appointment-form {
+    display: none;
+    background-color: lightblue;
+    width: 50%; /* Set width to 50% of the screen */
+    max-width: 600px; /* Maximum width to ensure it doesn't stretch too far */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 0 auto; /* Center the form horizontally */
+    position: relative;
+    top: 10px; /* Adds some space from the top */
+}
+
+
+.appointment-button:hover {
+    background-color: #004d40; /* Even darker teal on hover */
+}
+
+
+
+.appointment-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.appointment-form label {
+    margin-bottom: 3px;
+    font-size: 0.9em;
+}
+
+.appointment-form input, .appointment-form select, .appointment-form textarea {
+    margin-bottom: 10px;
+    padding: 6px;
+    font-size: 0.9em;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+}
+
+.appointment-form button {
+    background-color: #00796b; /* Darker teal */
+    color: white;
+    padding: 10px;
+    font-size: 0.9em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.appointment-form button:hover {
+    background-color: #004d40; /* Even darker teal on hover */
+}
+
+
+/* Modal container */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Modal content box */
+.modal-content {
+    background-color: #f9f9f9; /* Light background color */
+    margin: 10% auto;
+    padding: 30px;
+    border: 1px solid #ddd;
+    width: 40%;
+    max-width: 500px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    animation: slideDown 0.5s ease-out; /* Animation for modal appearance */
+}
+
+/* Modal appearance animation */
+@keyframes slideDown {
+    from {
+        transform: translateY(-20%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Close button */
+.close {
+    color: #bbbbbb;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #ff5e5e;
+    text-decoration: none;
+}
+
+/* Form labels */
+.modal-content label {
+    display: block;
+    font-size: 1em;
+    color: #333;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+/* Form inputs */
+.modal-content input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+    font-family: 'Arial', sans-serif;
+    color: #555;
+    transition: border-color 0.3s ease;
+}
+
+.modal-content input:focus {
+    border-color: #00aaff; /* Light blue on focus */
+    outline: none;
+}
+
+/* Submit button */
+.modal-content button {
+    width: 100%;
+    padding: 12px;
+    background-color: #00aaff; /* Light blue background */
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.modal-content button:hover {
+    background-color: #008ecc; /* Darker blue on hover */
+    transform: scale(1.05); /* Slightly enlarge the button on hover */
+}
+
+.modal-content button:active {
+    background-color: #0077aa; /* Even darker blue on click */
+    transform: scale(0.98); /* Slightly shrink on click */
+}
+
+/* Payment section title */
+.modal-content h3 {
+    font-size: 1.5em;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: 'Arial', sans-serif;
+    letter-spacing: 0.5px;
+}
+
+/* Adding a subtle box shadow effect on input focus */
+.modal-content input:focus {
+    box-shadow: 0 0 5px rgba(0, 170, 255, 0.5);
+}
+
+
+/* Footer */
+footer {
+    background-color: #004d40; /* Dark teal */
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    margin: 10px;
+}
+
+.footer-section h3 {
+    margin-bottom: 10px;
+}
+
+.footer-section p, .footer-section ul {
+    margin: 5px 0;
+}
+
+.footer-section a {
+    color: #4db6ac; /* Light teal */
+    text-decoration: none;
+}
+
+.footer-section a:hover {
+    text-decoration: underline;
+}
+
+.social-links a {
+    color: white;
+    margin: 0 10px;
+    font-size: 1.5em;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #4db6ac; /* Light teal */
+}
+
+
+
+
+
+
+
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto; /* Center the modal content */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Adjust as needed */
+    max-width: 500px; /* Max width */
+    border-radius: 8px; /* Rounded corners */
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+}
+
+/* Popup Styles */
+/* Popup Styles */
+.popup {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+}
+
+
+
+.popup-content {
+    background-color: #fff;
+    margin: 15% auto; /* Center the popup content */
+    padding: 40px;
+    border-radius: 12px; /* Rounded corners */
+    width: 80%; /* Adjust as needed */
+    max-width: 500px; /* Max width */
+    text-align: center; /* Center the text */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+    font-family: 'Arial', sans-serif; /* Font family */
+}
+
+.popup-content h2 {
+    font-size: 2em; /* Larger font size for the heading */
+    color: #2c3e50; /* Darker color for the heading */
+    margin-bottom: 20px; /* Space below the heading */
+}
+
+.popup-content p {
+    font-size: 1.2em; /* Slightly larger font size for the text */
+    color: #34495e; /* A softer color for the text */
+    line-height: 1.6; /* Increased line height for readability */
+}
+
+.close {
+    color: #e74c3c; /* Red color for the close button */
+    font-size: 30px; /* Larger font size for the close button */
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #c0392b; /* Darker red on hover */
+}
+
+/* Pharmacy Section Styles */
+#pharmacy {
+    padding: 50px 20px;
+    background-color: #e0ffff;
+}
+
+#pharmacy h2 {
+    text-align: center;
+    color: #333;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+#pharmacy p {
+    text-align: center;
+    color: #666;
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+.pharmacy-content {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.pharmacy-content form {
+    display: flex;
+    flex-direction: column;
+}
+
+.pharmacy-content form label {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.pharmacy-content form input[type="file"],
+.pharmacy-content form select {
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.pharmacy-content form button[type="submit"] {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    font-size: 18px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.pharmacy-content form button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+#deliveryStatus {
+    margin-top: 40px;
+}
+
+#deliveryStatus h3 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#deliveryUpdates {
+    list-style: none;
+    padding: 0;
+}
+
+#deliveryUpdates li {
+    background-color: #e9ecef;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #333;
+}
+
+
+/* Lab Test Booking Section Styles */
+#lab-tests {
+    padding: 50px 20px;
+    background-color: #e0ffff;
+}
+
+#lab-tests h2 {
+    text-align: center;
+    color: #333;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+#lab-tests p {
+    text-align: center;
+    color: #666;
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+.lab-test-content {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.lab-test-content form {
+    display: flex;
+    flex-direction: column;
+}
+
+.lab-test-content form label {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.lab-test-content form input[type="text"],
+.lab-test-content form input[type="date"],
+.lab-test-content form input[type="time"],
+.lab-test-content form select {
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.lab-test-content form button[type="submit"] {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    font-size: 18px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.lab-test-content form button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+#testBookingStatus {
+    margin-top: 40px;
+}
+
+#testBookingStatus h3 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#testBookingUpdates {
+    list-style: none;
+    padding: 0;
+}
+
+#testBookingUpdates li {
+    background-color: #e9ecef;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #333;
+}
+
+
+
+/* Interactive Symptom Maps Section */
+#symptom-maps {
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.map-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.map {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+}
+
+#mapImage {
+    width: 100%;
+    height: auto;
+}
+
+.map-controls {
+    margin-top: 10px;
+}
+
+.map-controls button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.map-controls button:hover {
+    background-color: #0056b3;
+}
+
+.symptom-info {
+    position: absolute;
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    display: none;
+    max-width: 200px;
+}
+
+#headache-info {
+    top: 20%;
+    left: 40%;
+}
+
+#fever-info {
+    top: 50%;
+    left: 50%;
+}
+
+#cough-info {
+    top: 70%;
+    left: 30%;
+}
+
+/* Make the symptom info visible */
+.symptom-info.active {
+    display: block;
+}
+/* Emergency Section */
+#emergency {
+    padding: 20px;
+    background-color: #ffecec;
+    border: 1px solid #ff4d4d;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+#emergency h2 {
+    color: #ff4d4d;
+    margin-bottom: 15px;
+    font-size: 24px;
+    text-align: center;
+}
+
+.emergency-content {
+    text-align: center;
+}
+
+.emergency-contacts {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.emergency-contacts li {
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+#callEmergencyBtn {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#callEmergencyBtn:hover {
+    background-color: #e60000;
+}
+/* Data Security Features Section */
+#data-security {
+    padding: 20px;
+    background-color: #e0ffff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+#data-security h2 {
+    color: #4a4a8c;
+    margin-bottom: 15px;
+    font-size: 24px;
+    text-align: center;
+}
+
+.security-content {
+    text-align: left;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+.security-features {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.security-features li {
+    margin: 10px 0;
+    font-weight: bold;
+    background-color: #e0e0eb;
+    padding: 10px;
+    border-radius: 5px;
+}
+/* Reviews Section Styles */
+#reviews {
+    background-color: #e0ffff;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+#reviews h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+    color: #343a40;
+}
+
+.review-slider {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.review {
+    display: none;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s ease-in-out;
+}
+
+.review.active {
+    display: block;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.review h4 {
+    margin-top: 15px;
+    font-size: 18px;
+    color: #007bff;
+}
+
+.slider-controls {
+    margin-top: 20px;
+}
+
+.slider-controls button {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 5px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s;
+}
+
+.slider-controls button:hover {
+    background-color: #0056b3;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
