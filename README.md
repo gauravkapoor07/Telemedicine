@@ -101,22 +101,26 @@ To build a comprehensive telemedicine platform, here is a suggested tech stack:
 
 Here are some useful Git commands to help manage this repository:
 
-1. Clone the repository:
+1. Fork the Repository
+
+   Go to the link: https://github.com/gauravkapoor07/Telemedicine and click the **Fork** button in the upper right corner to create a copy of the repository under your GitHub account.
+
+2. Clone the repository:
     ```bash
     git clone https://github.com/gauravkapoor07/Telemedicine
     ```
-2. Navigate to the project directory:
+3. Navigate to the project directory:
     ```bash
     cd Telemedicine
     ```
-3.	Install Dependencies (if applicable)
+4.	Install Dependencies (if applicable)
 If you’re using a package manager (e.g., Node.js etc.), install the project dependencies:
 	-	For Node.js projects:
    - First Run the below command in terminal
   	 ```bash
   	  npm install -g npm
      ```
-4.	Start the Application
+5.	Start the Application
 Depending on the type of project, use the appropriate command to start the application:
 	-	For Node.js:
     ```bash
