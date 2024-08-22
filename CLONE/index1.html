@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TeleMed User Dashboard</title>
+    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <h1>TeleMed</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#appointments" id="appointmentToggle">Appointments</a></li>
+                    <li><a href="#pharmacy">Pharmacy</a></li> <!-- New Pharmacy Link -->
+                    <li><a href="http://localhost:3030/7eaaaaf0-293c-43a7-b60e-19517b78d598">Video Consultation</a></li>
+                    <li><a href="http://127.0.0.1:5501/index.html#home" target="blank">Logout</a></li>
+                    <li id="referralPopUp" class="referral-icon">Refer & Earn</li> <!-- Referral Pop-Up Trigger -->
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Referral Program Pop-Up -->
+    <div id="referralPopupContent" class="referral-popup">
+        <h2>Referral Program</h2>
+        <div class="referral-content">
+            <p>Invite your friends to join TeleMed and earn rewards! Share your unique referral link:</p>
+            <input type="text" id="referralLink" value="https://telemed.com/referral?user=Brioooo" readonly>
+            <button id="copyReferralLink">Copy Link</button>
+            <p>Or share it directly on social media:</p>
+            <div class="social-share">
+                <a href="#" id="shareFacebook"><i class="fab fa-facebook"></i> Facebook</a>
+                <a href="#" id="shareTwitter"><i class="fab fa-twitter"></i> Twitter</a>
+                <a href="#" id="shareLinkedIn"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="#" id="shareEmail"><i class="fas fa-envelope"></i> Email</a>
+            </div>
+        </div>
+    </div>
+    
+    
+    <!-- Main Content -->
+    <main>
+        <!-- Welcome Section -->
+        <section id="welcome">
+            <div class="welcome-content">
+                <div class="text">
+                    <h1> <strong> Welcome, </strong><span>Mrs.Niwas</span></h1>
+                    <p> <b> Your personal telemedicine dashboard.</b></p>
+                </div>
+                <div class="disease-container">
+                    <img src="1-removebg-preview.png" alt="Psychiatry Left Image">
+                    <div class="disease-name"> <strong> <b> Psychiatry </b></strong></div>
+                    <img src="2-removebg-preview.png" alt="Psychiatry Right Image">
+                </div>
+
+                <div class="disease-container1">
+                    <img src="3-removebg-preview.png" alt="Gynecology Left Image">
+                    <div class="disease-name"> <strong> <b> Gynecology</b></strong></div>
+                    <img src="4-removebg-preview.png" alt="Gynecology Right Image">
+                </div>
+
+                <div class="disease-container2">
+                    <img src="5-removebg-preview.png" alt="Pulmonology Left Image">
+                    <div class="disease-name"> <strong> Pulmonology</strong></div>
+                    <img src="6-removebg-preview.png" alt="Pulmonology Right Image">
+                </div>
+
+                <div class="disease-container3">
+                    <img src="7-removebg-preview.png" alt="Orthopedic Left Image">
+                    <div class="disease-name"> <strong> Orthopedic</strong></div>
+                    <img src="8-removebg-preview.png" alt="Orthopedic Right Image">
+                </div>
+            </div>
+        </section>
+
+        <!-- Appointments Section -->
+        <section id="appointments">
+            <button class="appointment-button" onclick="toggleAppointmentForm()">Book an Appointment</button>
+            <div class="appointment-form" id="appointmentForm">
+                <h3>Upcoming Appointments</h3>
+                <ul id="upcomingAppointments">
+                    <!-- List of upcoming appointments will be inserted here -->
+                </ul>
+                <h3>Book a New Appointment</h3>
+                <form id="appointmentBookingForm">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required><br>
+                    
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required><br>
+                    
+                    <label for="date">Date:</label>
+                    <input type="date" id="date" name="date" required><br>
+                    
+                    <label for="time">Time:</label>
+                    <input type="time" id="time" name="time" required><br>
+                    
+                    <label for="doctor">Select Doctor:</label>
+                    <select id="doctor" name="doctor" required>
+                        <option value="dr_sharma">Dr. Sharma</option>
+                        <option value="dr_kapoor">Dr. Kapoor</option>
+                        <option value="dr_manzer">Dr. Manzer</option>
+                        <option value="dr_sumit">Dr. Sumit</option>
+                        <option value="dr_varshney">Dr. Varshney</option>
+                    </select><br>
+                    
+                    <label for="reason">Reason for Appointment:</label>
+                    <textarea id="reason" name="reason" required></textarea><br>
+                    
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+            <div class="appointments-list">
+                <!-- <h3>Past Appointments</h3> -->
+                <ul id="pastAppointments">
+                    <!-- List of past appointments will be inserted here -->
+                </ul>
+            </div>
+        </section>
+        
+        <!-- Pharmacy Section -->
+        <section id="pharmacy">
+            <h2>Pharmacy Integration</h2>
+            <p>Connect with local pharmacies for medicine delivery or refill prescriptions.</p>
+            <div class="pharmacy-content">
+                <form id="prescriptionUploadForm">
+                    <label for="prescriptionFile">Upload Prescription:</label>
+                    <input type="file" id="prescriptionFile" name="prescriptionFile" accept=".jpg,.jpeg,.png,.pdf" required><br>
+
+                    <label for="pharmacy">Select Pharmacy:</label>
+                    <select id="pharmacy" name="pharmacy" required>
+                        <option value="pharmacy1">Local Pharmacy 1</option>
+                        <option value="pharmacy2">Local Pharmacy 2</option>
+                        <option value="pharmacy3">Local Pharmacy 3</option>
+                        <option value="pharmacy4">Local Pharmacy 4</option>
+                    </select><br>
+
+                    <button type="submit">Submit Prescription</button>
+                </form>
+
+                <div id="deliveryStatus">
+                    <h3>Delivery Status</h3>
+                    <ul id="deliveryUpdates">
+                        <!-- Delivery status updates will be inserted here -->
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+         <!-- Lab Tests Section -->
+         <section id="lab-tests">
+            <h2>Lab Test Booking</h2>
+            <p>Book your lab tests with ease.</p>
+            <div class="lab-test-content">
+                <form id="labTestBookingForm">
+                    <label for="testName">Lab Test Name:</label>
+                    <input type="text" id="testName" name="testName" required><br>
+
+                    <label for="testDate">Preferred Date:</label>
+                    <input type="date" id="testDate" name="testDate" required><br>
+
+                    <label for="testTime">Preferred Time:</label>
+                    <input type="time" id="testTime" name="testTime" required><br>
+
+                    <label for="lab">Select Lab:</label>
+                    <select id="lab" name="lab" required>
+                        <option value="lab1">Lab 1</option>
+                        <option value="lab2">Lab 2</option>
+                        <option value="lab3">Lab 3</option>
+                        <option value="lab4">Lab 4</option>
+                        <option value="lab5">Lab 5</option>
+                    </select><br>
+
+                    <button type="submit">Book Test</button>
+                </form>
+
+
+
+            </section>
+
+
+            <!-- Interactive Symptom Maps Section -->
+<!-- <section id="symptom-maps">
+    <h2>Interactive Symptom Maps</h2>
+    <div class="map-container">
+        <div class="map" id="symptomMap">
+            <img src="map-image.png" alt="Symptom Map" id="mapImage"> -->
+            <!-- Interactive areas for symptoms -->
+            <!-- <div class="symptom-info" id="headache-info">Headache: Often related to stress or tension.</div>
+            <div class="symptom-info" id="fever-info">Fever: Can be a sign of infection or illness.</div>
+            <div class="symptom-info" id="cough-info">Cough: Commonly caused by respiratory issues.</div> -->
+            <!-- Add more interactive areas as needed -->
+        <!-- </div>
+        <div class="map-controls">
+            <button onclick="showSymptomInfo('headache')">Headache</button>
+            <button onclick="showSymptomInfo('fever')">Fever</button>
+            <button onclick="showSymptomInfo('cough')">Cough</button> -->
+            <!-- Add more buttons as needed -->
+        <!-- </div>
+    </div>
+</section> -->
+
+<!-- Emergency Section -->
+<section id="emergency">
+    <h2>Emergency</h2>
+    <div class="emergency-content">
+        <p>If you are experiencing a medical emergency, please dial your local emergency number immediately.</p>
+        <p>For other urgent health concerns, you can contact the following services:</p>
+        <ul class="emergency-contacts">
+            <li><strong>Emergency Medical Services:</strong> 911</li>
+            <li><strong>Poison Control:</strong> 1-800-222-1222</li>
+            <li><strong>Suicide Prevention Hotline:</strong> 1-800-273-8255</li>
+            <!-- Add more emergency contacts as needed -->
+        </ul>
+        <button id="callEmergencyBtn">Call Emergency Services</button>
+    </div>
+</section>
+<!-- Data Security Features Section -->
+<section id="data-security">
+    <h2>Data Security</h2>
+    <div class="security-content">
+        <p>Your privacy and security are our top priorities. We have implemented the following measures to ensure your data is protected:</p>
+        <ul class="security-features">
+            <li><strong>End-to-End Encryption:</strong> All your communications, including video consultations, are encrypted.</li>
+            <li><strong>Secure Authentication:</strong> Multi-factor authentication (MFA) is required to access your account.</li>
+            <li><strong>Data Privacy:</strong> We adhere to strict data privacy regulations (e.g., HIPAA, GDPR) to protect your personal information.</li>
+            <li><strong>Regular Security Audits:</strong> We conduct regular audits to identify and fix vulnerabilities.</li>
+            <li><strong>Data Backup:</strong> Your data is regularly backed up to secure servers to prevent loss.</li>
+        </ul>
+    </div>
+</section>
+
+<!-- Reviews Section -->
+<section id="reviews">
+    <h2>What Our Users Say</h2>
+    <div class="review-slider" id="reviewSlider">
+        <div class="review active">
+            <p>“TeleMed has transformed the way I manage my health. The video consultations are incredibly convenient.”</p>
+            <h4>- Aditi Sharma</h4>
+        </div>
+        <div class="review">
+            <p>“Booking appointments and getting medicines delivered has never been this easy. I highly recommend TeleMed.”</p>
+            <h4>- Rohan Verma</h4>
+        </div>
+        <div class="review">
+            <p>“TeleMed’s service is exceptional! The platform is user-friendly and the support team is always helpful.”</p>
+            <h4>- Sneha Patel</h4>
+        </div>
+        <div class="review">
+            <p>“I love how TeleMed allows me to consult with top doctors from the comfort of my home.”</p>
+            <h4>- Arjun Singh</h4>
+        </div>
+    </div>
+    <div class="slider-controls">
+        <button onclick="prevReview()">&#10094;</button>
+        <button onclick="nextReview()">&#10095;</button>
+    </div>
+</section>
+
+
+                
+        <!-- Payment Section -->
+        <!-- Payment Modal -->
+        <div id="paymentModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closePaymentModal()">&times;</span>
+                <h3>Payment Information</h3>
+                <form id="paymentForm">
+                    <label for="cardName">Cardholder Name:</label>
+                    <input type="text" id="cardName" name="cardName" required><br>
+                    
+                    <label for="cardNumber">Card Number:</label>
+                    <input type="text" id="cardNumber" name="cardNumber" required><br>
+                    
+                    <label for="expiryDate">Expiry Date:</label>
+                    <input type="text" id="expiryDate" name="expiryDate" placeholder="MM/YY" required><br>
+                    
+                    <label for="cvv">CVV:</label>
+                    <input type="text" id="cvv" name="cvv" required><br>
+                    
+                    <button type="submit">Pay Now</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Thank You Popup -->
+        <div id="thankYouPopup" class="popup">
+            <div class="popup-content">
+                <span class="close" onclick="closeThankYouPopup()">&times;</span>
+                <h2>Thank You!</h2>
+                <p>Your appointment is successfully booked.</p>
+            </div>
+        </div>
+
+        <!-- Consultation Dashboard Section -->
+        <section id="consultation-dashboard">
+            <div id="consultations">
+                <!-- Consultation list will be dynamically inserted here -->
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: <a href="mailto:contact@website.com">contact@website.com</a></p>
+                <p>Tel: <a href="tel:+0029129102320">0029129102320</a></p>
+                <p>Mobile: <a href="tel:+0029129102320">0029129102320</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>Our Services</h3>
+                <ul>
+                    <li><a href="#appointments">Book Appointments</a></li>
+                    <li><a href="#pharmacy">Pharmacy</a></li> <!-- New Pharmacy Link in Footer -->
+                    <li><a href="#consultation-dashboard">Video Consultation</a></li>
+                    <li><a href="#payment">Make Payments</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+   
+
+    <script src="script1.js"></script>
+</body>
+</html>
