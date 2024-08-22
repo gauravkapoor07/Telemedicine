@@ -88,7 +88,7 @@ To build a comprehensive telemedicine platform, here is a suggested tech stack:
   
 ### 4. **Real-Time Communication**
 - **WebRTC**: Enables real-time video and voice communication between patients and doctors.
-- **Twilio API**: For SMS, voice, and video conferencing integration in telemedicine platforms.
+- **Socket.io**: For video conferencing integration in telemedicine platforms.
 
 ### 5. **Security & Compliance**
 - **OAuth 2.0 / JWT**: Authentication protocols to manage user sessions and protect user data.
@@ -98,7 +98,6 @@ To build a comprehensive telemedicine platform, here is a suggested tech stack:
 ### 6. **Cloud & DevOps**
 - **AWS/GCP/Azure**: Cloud services for hosting, scaling, and managing telemedicine applications.
 - **Docker**: For containerizing the application and ensuring consistent environments.
-- **Kubernetes**: For automating deployment, scaling, and managing containerized applications.
 
 ---
 ## 📦 Installation
@@ -141,12 +140,6 @@ Telemedicine is revolutionizing the healthcare industry by making services more 
 ## 📜 License
 
 This project is licensed under the MIT License.
-
----
-
-## 🤝 Contributing
-
-Contributions are welcome! Open an issue or submit a pull request for any improvements or suggestions. Let's make this app even better together! 🌟
 
 
  	
