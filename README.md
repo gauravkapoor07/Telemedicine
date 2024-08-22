@@ -68,7 +68,7 @@ Welcome to the **Telemedicine Repository**!📶 This project outlines key aspect
 4. **Emergency Care**: Virtual triage and urgent consultations to assess non-life-threatening conditions.
 
 ---
- ## Tech Stack
+ ## 🛠️Tech Stack
 
 To build a comprehensive telemedicine platform, here is a suggested tech stack:
 
