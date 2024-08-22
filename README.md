@@ -3,6 +3,8 @@
 Welcome to the **Telemedicine Repository**!📶 This project outlines key aspects of telemedicine, including its benefits, unique selling points (USPs), types of services, and its role in modern healthcare. Additionally, we include some basic Git commands to help you manage this repository effectively.
 
 ## Introduction ✨
+![Screenshot 2024-08-22 at 11 16 32 PM](https://github.com/user-attachments/assets/cbdc3080-8dd2-4ff2-90e0-960508846b14)
+
 
 **Telemedicine** is a platform that uses telecommunication technology to deliver healthcare services remotely. It allows healthcare providers to consult, diagnose, and treat patients through various digital platforms, including video calls, mobile apps, and wearables. We provide:
 
